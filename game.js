@@ -70,6 +70,7 @@ const computerTurn=()=>{
             let cTurn=Math.floor(Math.random()*9);
             if($(boxes[cTurn]).text()===""){
                 $(boxes[cTurn]).text("X").addClass("x");
+                count++;
                 turn="O";
                 $(boxes[cTurn]).prop('disabled',true);
                 showTurn();
@@ -180,7 +181,7 @@ const checkwinner=()=>{
             let pos3=$(boxes[pattern[2]]).text();
             if(pos1!=""&&pos2!=""&&pos3!=""){   
                 if(pos1===pos2 && pos2===pos3){
-                    winner.text(`winner is ${pos1}`);
+                    winner.text(`Winner is ${pos1}`);
                     console.log(`winner is${pos1}`);
                     $(".winnerBackground").show();
                     gameOver=true;
